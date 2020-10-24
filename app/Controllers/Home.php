@@ -1,4 +1,6 @@
-<?php namespace App\Controllers;
+<?php
+
+namespace App\Controllers;
 
 class Home extends BaseController
 {
@@ -7,26 +9,14 @@ class Home extends BaseController
 		return view('welcome_message');
 	}
 
-	//--------------------------------------------------------------------
-	<?php namespace App\Controllers;
-
-class Home extends BaseController
-{
-	public function index()
+	public function show()
 	{
-		return view('welcome_message');
+		$data['nama'] = 'Arafia Isnayu Akaf';
+		$title['judul'] = 'Mahasiswa';
+		echo view('mahasiswa/header', $title);
+		echo view('mahasiswa/index', $data);
+		echo view('mahasiswa/footer');
 	}
-
 	//--------------------------------------------------------------------
-public function show()
-{
-	$data['nama'] = 'Nama : Arafia Isnayu Akaf';
-	$data['NPM'] = 'NPM : 1817051021';
-	$data['jurusan']='Ilmu Komputer';
-	echo view('mahasiswa/header');
-	echo view('mahasiswa/index', $data,);
-	echo view('mahasiswa/footer');
-}
-
 
 }
